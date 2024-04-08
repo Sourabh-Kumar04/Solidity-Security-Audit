@@ -37,14 +37,14 @@ python3 setup.py install
 ```
 docker pull trailofbits/eth-security-toolbox
 ```
-#### MAke a file
+#### Make a file
 ```
 touch contractname.sol
 ```
 ```
 nano
 ```
-###### Write a contract
+- Write a contract
 ```
 write contract like this:
 pragma solidity ^0.4.15;
@@ -89,7 +89,7 @@ contract CrowdFundSafe {
   }
 }
 ```
-exit from terminal
+- Exit from terminal
 ```
 press ctrl+x
 ```
@@ -99,9 +99,12 @@ type y
 ```
 type filename
 ```
+- 
 ```
 solc-select use compilerversion(like 0.5.15)
 ```
+
+- Local copy of a contract file
 ```
 slither filename.sol
 ```
