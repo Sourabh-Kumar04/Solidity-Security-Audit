@@ -1,41 +1,32 @@
 # Solidity-Security-Audit
 
 ## Security Audit for Solidity
-- **Solgraph:** docker pull devopstestlab/solgraph
-- **Slither:** docker
-
+- **Slither**
+- **Solgraph**
 
 ## Slither 
 ```
-sudo apt install software-properties-common
-```
+$ sudo apt install software-properties-common
 
-```
-sudo add-apt-repository ppa:ethereum/ethereum
-```
+$ sudo add-apt-repository ppa:ethereum/ethereum
 
-```
-sudo apt install solc
-```
+$ sudo apt install solc
 
-```
-pip3 install solc-select
-```
-#### Using pip
-```
-pip3 install slither-analyzer
-```
+$ pip3 install solc-select
 
-#### Using GitHub
-```
-git clone <https://github.com/crytic/slither.git> && cd slither
-```
-```
-python3 setup.py install
-```
-#### Using Docker
-```
-docker pull trailofbits/eth-security-toolbox
+**Using pip**
+
+$ pip3 install slither-analyzer
+
+**Using GitHub**
+
+$ git clone <https://github.com/crytic/slither.git> && cd slither
+
+$ python3 setup.py install
+
+**Using Docker**
+
+$ docker pull trailofbits/eth-security-toolbox
 ```
 #### Make a file
 ```
@@ -46,7 +37,6 @@ nano
 ```
 - Write a contract
 ```
-write contract like this:
 pragma solidity ^0.4.15;
 
 contract CrowdFundBad {
@@ -89,22 +79,57 @@ contract CrowdFundSafe {
   }
 }
 ```
-- Exit from terminal
+
+
+
+
+Local copy of a contract file
 ```
-press ctrl+x
-```
-```
-type y
-```
-```
-type filename
-```
-- 
-```
-solc-select use compilerversion(like 0.5.15)
+$ solc-select use Solidity-compilerversion(like 0.5.15)
+
+$ slither filename.sol
 ```
 
-- Local copy of a contract file
-```
-slither filename.sol
-```
+
+## Solgraph
+#### Pre-requisite
+- Install Docker
+- Pull devopstestlab/solgraph:
+  ```
+  $ docker pull devopstestlab/solgraph
+  ```
+  #### Create the Smart Contract in Solidity
+  ```
+  $ sudo mkdir data
+  $ cd data
+  $ sudo vi MyContract.sol
+  ```
+  Run this Contract in the docker image we just pull:
+  ```
+  $ docker run -it -v $PWD:/data devopstestlab/solgraph
+  ```
+  View the image using:
+  - For Ubuntu/Linux
+    ```
+    $ xdg-open MyContract.sol.png
+    ```
+  - Wsl Ubuntu
+    ```
+    $ eog MyContract.sol.png
+    ```
+![image](https://github.com/Sourabh-Kumar04/Solidity-Security-Audit/assets/155216316/d4de0fa4-815c-4458-b617-a195e225606f)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
